@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    background-color: #ffffff;
+    padding: 20px;
+    color: #0B1635;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space logos to the edges */
+    margin-bottom: 0px;
+}
+.logo_medmehr{
+    height: 60px; /* Set a fixed height for both logos */
+    width: auto;
+}
+.logo_ghl{
+    height: 60px; /* Set a fixed height for both logos */
+    width: auto;
+}
+
+.product-info {
+    text-align: left;
+}
+
+.product-image {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.product-info h3 {
+    color: #24495D;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.product-info h2 {
+    color: #0B1635;
+    font-size: 20px;
+    margin: 5px 0;
+    font-family: 'Roboto', sans-serif; 
+}
+.product-info h4{
+    font-size: 14px;
+    color: #0B1635;
+    font-family: 'Roboto', sans-serif; 
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #0B1635;
+    font-family: 'Roboto', sans-serif; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Expandable sections */
+.accordion {
+    position: relative;
+    color: white;
+    cursor: pointer;
+    font-family: 'Noto Sans', sans-serif; 
+    font-weight: lighter;
+    justify-content: space-between;
+    padding: 15px;
+    align-items: center;
+    text-align: left;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    width: 100%;
+    transition: background-color 0.2s ease;
+    margin-top: 5px;
+    border-radius: 12px; 
+    margin-bottom: 5px; 
+}
+.accordion:active {
+    filter: brightness(85%); /* Darken by 15% */
+}
+.accordion-eco{
+    background-color:#328283;
+}
+.accordion-health{
+    background-color:#2B7281;
+}
+.accordion-mehr{
+    background-color:#34A853;
+}
+.accordion-safety{
+    background-color:#28596D;
+}
+.accordion-digit{
+    background-color:#24495D;
+}
+.accordion-hygiene{
+    background-color:#1B2F45;
+}
+.accordion-text{
+    margin-left: 40px;
+    padding-bottom: 20px;
+     /* Allow text to take the available space */
+    
+     /* Position the arrow absolutely within the button */
+}
+
+.icon-left {
+    position: absolute; 
+    transform-origin: center; /* Position the arrow absolutely within the button */
+    left: 15px; /* Move it to the right */
+    width: 24px;
+    height: 24px;
+    margin-right: 20px; /* Space between the icon and the text */
+}
+
+.icon-right {
+    position: absolute; /* Position the arrow absolutely within the button */
+    right: 15px; /* Move it to the right */
+    top: 50%; /* Center it vertically */
+    transform: translateY(-50%); 
+    width: 24px;
+    height: 24px;
+    margin-left: 30px;
+    transform-origin: center; 
+    transition: transform 0.3s ease; /* Arrow rotation transition */
+}
+
+/* When accordion is active, rotate the arrow */
+.accordion.active .arrow-icon {
+    
+    transform: translateY(-50%) rotate(90deg); /* Rotate arrow when the accordion is opened */
+}
+
+
+.panel {
+    padding: 10px 15px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    background-color: #ffffff;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-radius: 0 0 10px 10px;
+}
+.panel p {
+    margin: 0px 0;
+
+}
+
+.contact {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: left;
+    padding: 5px;
+}
+.contact h4{
+    font-size: 20px;
+    color: #0B1635;
+    font-family: 'Roboto', sans-serif; 
+
+}
+.link-text{
+    font-size: 14px;
+    font-weight: bold;
+    color: #24495D;
+    font-family: 'Roboto', sans-serif; 
+    text-decoration: underline; /* Ensure the link is underlined */
+    transition: color 0.3s ease;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    
+}
+.link-text:hover {
+    color: #0B1635; /* Change color on hover */
+}
+/* Responsive styles */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+
+    .product-info h2 {
+        font-size: 24px;
+    }
+
+    .accordion {
+        padding: 20px;
+    }
+}

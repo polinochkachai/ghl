@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Info Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo section -->
+    <div class="logo">
+        <img src="static/src/medmehr_logo.svg" alt="medmehr" class= "logo_medmehr">
+        <img src="static/src/GreenHealthLab.webp.svg" alt="ghl" class= "logo_ghl">
+    </div>
+    
+    <!-- Product Section -->
+    <div class="product-info">
+        <img src="static/src/VARIUS_ETON.png" alt="Product Image" class="product-image">
+        <h3>KWC Aquarotter GmbH</h3>
+        <h2>VARIUS Reihenwaschtisch</h2>
+        <h4>(B 1200 x T 500)</h4>
+        <p>
+            VARIUS Reihenwaschtisch, gerade, aus kunstharzgebundenem Mineralwerkstoff MIRANIT,
+            Farbton Alpinweiß. Individuell gestaltbarer Waschtisch mit nahtlos eingeformter Mulde ETON.
+        </p>
+    </div>
+
+    <!-- Expandable Button Sections -->
+    <div class="expandable-section" id="mehr-information">
+        <button class="accordion accordion-mehr">
+            <img src="static/src/ri_more-fill.svg" class="icon-left" alt="Mehr Icon" />
+            <span class="accordion-text">Mehr Informationen</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Gestaltungsvariablen:
+                <ul>
+                    <li>Waschtischbreite bis max. 3.600 mm</li>
+                    <li>Frei wählbare Anordnung der Mulden</li>
+                    <li>Ausführungen mit oder ohne Armaturenbohrungen, zur Kombination mit Stand- oder Wandarmaturen</li>
+                </ul>
+            </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="nachhaltigkeitsaspekte">
+        <button class="accordion accordion-eco">
+            <img src="static/src/material-symbols_eco.svg" class="icon-left" alt="Leaf Icon" />
+            <span class="accordion-text">Nachhaltigkeit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p> <ul>
+                <li> Der Mineralwerkstoff MIRANIT besteht zum Großteil (80%) aus natürlichen Rohstoffen, wie
+                    Marmormehl, Sandstein und Quarzsand.</li>
+                <li>Das Material ist äußerst robust und im Vergleich zu Sanitärkeramik wesentlicher bruchfester.</li>
+                <li>Für die Fertigung der MIRANIT Waschtische ist kein Brennvorgang (keine thermische Energie
+                    notwendig) erforderlich. Das Material härtet in der Form aus.</li>
+                <li>Oberflächenschäden lassen sich mit speziellen Reparatursets ausbessern.</li>
+                <li>Am Ende des Produktlebenszyklus können MIRANIT Waschtische recycelt oder über den
+                    normalen Hausmüll entsorgt werden.</li>
+            </ul>
+            </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="gesundheit">
+        <button class="accordion accordion-health">
+            <img src="static/src/solar_health-bold.svg" class="icon-left" alt="Safety Icon" />
+            <span class="accordion-text">Gesundheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Die porenfreie, hygienische Oberfläche verringert das Verkeimungsrisiko.</p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="sicherheit">
+        <button class="accordion accordion-safety">
+            <img src="static/src/material-symbols_health-and-safety.svg" class="icon-left" alt=" Health Icon" />
+            <span class="accordion-text">Sicherheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Das besonders bruchfeste Material ist äußerst stabil und schlagfest.</p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="digitalisierung">
+        <button class="accordion accordion-digit">
+            <img src="static/src/streamline_ai-technology-spark-solid.svg" class="icon-left" alt="Digitalisierung Icon" />
+            <span class="accordion-text">Digitalisierung</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Digitalization and technological info.</p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="hygieneaspekt">
+        <button class="accordion accordion-hygiene">
+            <img src="static/src/ic_round-clean-hands.svg" class="icon-left" alt="Hygieneaspekt Icon" />
+            <span class="accordion-text">Hygieneaspekt</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Die nahtlos geformten Waschtische verfügen über eine glatte, porenfreie Oberfläche, die leicht
+                zu reinigen und zu desinfizieren ist.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h4>Kontakt</h4>
+        <p><a href="http://www.kwc-professional.com/de_DE" class="link-text">KWC Aquarotter GmbH </a></p>
+        <p>Parkstraße 1-5 | 14974 Ludwigsfelde | Deutschland</p>
+        <p>Telefon +49 3378 818455 | kwc-info.de@kwc.com</p>
+    </div>
+</div>
+
+<script src="static/script.js"></script>
+</body>
+</html>
