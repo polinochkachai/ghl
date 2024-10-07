@@ -8,7 +8,7 @@ body {
     font-family: 'Roboto', sans-serif; 
     background-color: #ffffff;
     padding: 20px;
-    color: #0B1635;
+    color: #000000;
 }
 
 .container {
@@ -22,12 +22,16 @@ body {
     margin-bottom: 0px;
 }
 .logo_medmehr{
-    height: 60px; /* Set a fixed height for both logos */
+    height: 35px; /* Set a fixed height for both logos */
     width: auto;
+    transform-origin: center; 
+
 }
 .logo_ghl{
-    height: 60px; /* Set a fixed height for both logos */
+    margin-top: 0px;
+    height: 50px; /* Set a fixed height for both logos */
     width: auto;
+    transform-origin: center; 
 }
 
 .product-info {
@@ -40,26 +44,26 @@ body {
 }
 
 .product-info h3 {
-    color: #24495D;
+    color: #404041;
     font-size: 14px;
     font-family: 'Roboto', sans-serif; 
 }
 
 .product-info h2 {
-    color: #0B1635;
+    color: #000000;
     font-size: 20px;
     margin: 5px 0;
     font-family: 'Roboto', sans-serif; 
 }
 .product-info h4{
     font-size: 14px;
-    color: #0B1635;
+    color: #000000;
     font-family: 'Roboto', sans-serif; 
 }
 
 .product-info p {
     font-size: 14px;
-    color: #0B1635;
+    color: #000000;
     font-family: 'Roboto', sans-serif; 
     margin-top: 10px;
     margin-bottom: 10px;
@@ -151,12 +155,16 @@ body {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     border-radius: 0 0 10px 10px;
+    margin: 0px 10px;
 }
 .panel p {
-    margin: 0px 0;
+    margin: 0px 0px;
 
 }
-
+.panel h4{
+    font-weight: bold;
+    margin-top: 5px;
+}
 .contact {
     margin-top: 5px;
     font-size: 14px;
@@ -165,23 +173,27 @@ body {
 }
 .contact h4{
     font-size: 20px;
-    color: #0B1635;
+    color: #000000;
     font-family: 'Roboto', sans-serif; 
+
+}
+.contact p{
+    margin-top: 2px;
 
 }
 .link-text{
     font-size: 14px;
     font-weight: bold;
-    color: #24495D;
+    color: #404041;
     font-family: 'Roboto', sans-serif; 
     text-decoration: underline; /* Ensure the link is underlined */
     transition: color 0.3s ease;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     
 }
 .link-text:hover {
-    color: #0B1635; /* Change color on hover */
+    color: #564D9F; /* Change color on hover */
 }
 /* Responsive styles */
 @media (min-width: 768px) {
