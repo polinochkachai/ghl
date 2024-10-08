@@ -7,7 +7,9 @@
 body {
     font-family: 'Roboto', sans-serif; 
     background-color: #ffffff;
-    padding: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
     color: #000000;
 }
 
@@ -93,22 +95,22 @@ body {
     filter: brightness(85%); /* Darken by 15% */
 }
 .accordion-eco{
-    background-color:#328283;
+    background-color:#218FCF;
 }
 .accordion-health{
-    background-color:#2B7281;
+    background-color:#0E70B7;
 }
 .accordion-mehr{
     background-color:#34A853;
 }
 .accordion-safety{
-    background-color:#28596D;
+    background-color:#564D9F;
 }
 .accordion-digit{
-    background-color:#24495D;
+    background-color:#AB4B9D;
 }
 .accordion-hygiene{
-    background-color:#1B2F45;
+    background-color:#D81486;
 }
 .accordion-text{
     margin-left: 40px;
@@ -194,6 +196,25 @@ body {
 }
 .link-text:hover {
     color: #564D9F; /* Change color on hover */
+}
+
+.site-footer {
+    background-color: #34A853;
+    color: #000000;
+    padding: 0px 0;
+}
+.footer-banner img{
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
+.footer_text{
+    color: #404041;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 12px;
+    text-align: center;
+    
+
 }
 /* Responsive styles */
 @media (min-width: 768px) {
