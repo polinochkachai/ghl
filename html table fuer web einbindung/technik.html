@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktive Buttons</title>
+    <style>
+        /* Wrapper container for overall layout */
+        body {
+            font-family: Arial, sans-serif;
+           
+        }
+        .container {
+             /* Maximum width for the container */
+            width: 100%; /* Ensure it takes full width of the screen */
+            margin: 0 auto; /* Center the container on the screen */
+            padding: 0 20px; /* Padding on the sides */
+            box-sizing: border-box; /* Include padding in width/height calculation */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center all items horizontally */
+        }
+
+        /* Button container for alignment */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: -1px; /* Space between buttons */
+            width: 100%; /* Ensure button container takes full width */
+        }
+
+        /* Button wrapper for positioning */
+        .button-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-left: -50px;
+        }
+        .button1{
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #2262C9;
+            padding: 0; /* Remove extra padding */
+            height: 90px; /* Set consistent button height */
+            width: 900px; /* Set a fixed width for consistent button size */
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            color: white;
+            clip-path: polygon(2.5% 0%, 93% 0%, 100% 50%, 93% 100%, 2.5% 100%, 8% 50%);
+            margin-top: 5px; /* Optional: add spacing between buttons */
+        }
+
+        /* Base button styles for consistent size */
+        .button2, .button3, .button4, .button5 {
+            font-size: 16px;
+            padding: 0; /* Remove extra padding */
+            height: 70px; /* Set consistent button height */
+            width: 250px; /* Set a fixed width for consistent button size */
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            
+            clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%, 10% 50%);
+            
+            margin-bottom: 5px; /* Optional: add spacing between buttons */
+        }
+        .button2{
+            background-color: #8DC5FD;
+            font-size: 16px;
+            padding: 15px 50px;
+            color: black;
+        }
+        .button3{
+            background-color: #4FA7FF;
+            font-size: 16px;
+            padding: 15px 40px;
+            color: black;
+        }
+        .button4{
+            background-color: #3A90D2;
+            font-size: 16px;
+            padding: 15px 50px;
+            color: black;
+        }
+        .button5{
+            background-color: #2871BA;
+            font-size: 16px;
+            padding: 10px 50px;
+            color: white;
+        }
+
+        /* Default dropdown styles for laptop/desktop screens */
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0; /* Align dropdown to the left of the button container */
+            font-size: 14px;
+            text-align: left;
+        
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+             /* Width of the dropdown for consistency */
+            min-width: 250px; /* Ensure the minimum width */
+            border-radius: 5px;
+            z-index: 1000;
+            border: 0px solid #ccc;
+            border-top: none;
+        }
+        .dropdown2{ background-color: #8DC5FD;color: black;}
+        .dropdown3{ background-color: #4FA7FF;color: black;}
+        .dropdown4{ background-color: #3A90D2;color: black;}
+        .dropdown5{ background-color: #2871BA; color: white;}
+
+    
+        .spacing{
+            content: "";
+            width: 100%;
+            height: 600px;
+        }
+
+        /* Media Query for screens with max-width 768px (Mobile/Tablet) */
+        @media (max-width: 768px) {
+            /* Change dropdown width to fit mobile/tablet screen */
+            .dropdown {
+                width: 100%; /* Dropdown takes full width of screen/container */
+                min-width: 100%; /* Ensure it's at least as wide as the button container */
+                left: 0; /* Align dropdown with the left edge of the button container */
+                transform: translateX(0); /* No offset for smaller screens */
+            }
+
+            /* Adjust button styles for mobile/tablet */
+            .button-wrapper {
+                width: 100%; /* Buttons take full width of container */
+                margin: 0; /* Remove extra margins */
+            }
+
+            /* Optional: Adjust button size for smaller screens */
+            .button1, .button2, .button3, .button4, .button5 {
+                width: 100%; /* Make buttons take full width on small screens */
+                height: 50px; /* Adjust height for smaller screens */
+                font-size: 14px; /* Adjust font size for better readability */
+            }
+        }
+
+        /* Media Query for very small screens (e.g., mobile phones) with max-width 480px */
+        @media (max-width: 480px) {
+            /* For very small screens, adjust dropdown styles */
+            .dropdown {
+                width: 100%; /* Make dropdown take full width */
+                min-width: 100%; /* Ensure it spans the entire container */
+                padding: 15px 10px; /* Adjust padding for smaller screens */
+                top: 110%; /* Adjust dropdown position to not overlap too much */
+            }
+
+            /* Change button styles for smaller screens */
+            .button1, .button2, .button3, .button4, .button5 {
+                font-size: 14px; /* Smaller text on mobile */
+                height: 45px; /* Smaller height for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-wrapper">
+            <button class="button1">BERATUNGS- und PLANUNGS LEISTUNGEN</button>
+        </div>
+        <div class="button-container">
+            <div class="button-wrapper">
+                <button class="button2" onclick="toggleDropdown('dropdown1')">Bedarfsanalyse</button>
+                <div id="dropdown1" class="dropdown dropdown2">
+                    <ul class="dropdown_text">
+                        <li>
+                           Grundlagenermittlung; z.B. Flächenermittlung für einzelne Warengruppen
+                        </li>
+                        <li>
+                           Anforderungen der Groblogistik; z.B. Platzierung der log. Funktionsstellen; öffentliche Erschließung; Anbindung im Baukörper
+                        </li>
+                        <li>
+                            Erstellung von Berichten und Konzepten analog der HOAI-Phasen
+                        </li>
+                        <li>
+                            Planung und Prüfung der logistischen Anforderungen (Flächen, Räume, Ausstattungen) in den med. u. pfleger. Bereichen (Feinlogistik) 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="button3" onclick="toggleDropdown('dropdown2')">Konzeptionierung</button>
+                <div id="dropdown2" class="dropdown dropdown3">
+                    <ul class="dropdown_text">
+                        <li>
+                            Prozessabläufe je Warengruppen (Wäsche, Speisen, Arzneimittel, Verbrauchsgüter, Müll- u Wertstoffe)
+                        </li>
+                        <li>
+                            Prozessabläufe je Servicediensten (Bettenaufbereitung, Reinigungsdienste, Labordienste)
+                        </li>
+                        <li>
+                            Berücksichtigung von Besonderheiten wie unitdose-Versorgung, Fallwagenversorgung, Speisenverteilung, Umkleiden in Verbindung mit Wäscheausgabesystemen etc.​
+                        </li>
+                        <li>
+                            Prüfung und Einbindung idealer Fördertechniksysteme wie FTS, AMR, Rohrpost, weitere Robotiksysteme​ 
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="button4" onclick="toggleDropdown('dropdown3')">Fachplanung</button>
+                <div id="dropdown3" class="dropdown dropdown4">
+                    <ul class="dropdown_text">
+                        <li>
+                            Bewertung der Logistikprozesse hinsichtlich der EU-Richtlinie zur Nachhaltigkeitsberichterstattung (CSRD)
+                        </li>
+                        <li>
+                            Ausstattungs- und Organisationsplanungen (Regaltechniken, Wischmoppaufbereitung, Wäscheausgabesysteme etc.)
+                        </li>
+                        <li>
+                            Komplexe Umsetzung aus den Konzepten wie Wirtschaftshofplanung, AMR-Realisierung, Modulschrankversorgung u.a.
+                        </li>
+                       
+                    </ul>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="button5" onclick="toggleDropdown('dropdown4')">Umsetzung, Begleitung</button>
+                <div id="dropdown4" class="dropdown dropdown5 "><ul class="dropdown_text">
+                    <li>
+                        Ausstattungsplanung
+                    </li>
+                    <li>
+                        Umzugsplanungen
+                    </li>
+                    <li>
+                        Vorbereitung zur Vergabe (LV-Erstellung)
+                    </li>
+                    <li>
+                        Inbetriebnahmebegleitung  
+                    </li>
+                </ul></div>
+            </div>
+        </div>
+        <div class="spacing"></div>
+    </div>
+
+    <script>
+        function toggleDropdown(id) {
+            let dropdown = document.getElementById(id);
+            let allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(d => {
+                if (d.id !== id) {
+                    d.style.display = 'none';
+                }
+            });
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        }
+
+        document.addEventListener("click", function(event) {
+            let isClickInside = event.target.closest(".button-wrapper");
+            if (!isClickInside) {
+                document.querySelectorAll(".dropdown").forEach(d => d.style.display = "none");
+            }
+        });
+    </script>
+</body>
+</html>

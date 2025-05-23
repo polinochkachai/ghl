@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktive Buttons</title>
+    <style>
+        /* Wrapper container for overall layout */
+        body {
+            font-family: Arial, sans-serif;
+           
+        }
+        .container {
+             /* Maximum width for the container */
+            width: 100%; /* Ensure it takes full width of the screen */
+            margin: 0 auto; /* Center the container on the screen */
+            padding: 0 20px; /* Padding on the sides */
+            box-sizing: border-box; /* Include padding in width/height calculation */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center all items horizontally */
+        }
+
+        /* Button container for alignment */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: -1px; /* Space between buttons */
+            width: 100%; /* Ensure button container takes full width */
+        }
+
+        /* Button wrapper for positioning */
+        .button-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-left: -50px;
+        }
+        .button1{
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #C7C7C7;
+            padding: 0; /* Remove extra padding */
+            height: 90px; /* Set consistent button height */
+            width: 900px; /* Set a fixed width for consistent button size */
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            color: black;
+            clip-path: polygon(2.5% 0%, 93% 0%, 100% 50%, 93% 100%, 2.5% 100%, 8% 50%);
+            margin-top: 5px; /* Optional: add spacing between buttons */
+        }
+
+        /* Base button styles for consistent size */
+        .button2, .button3, .button4, .button5 {
+            font-size: 16px;
+            padding: 0; /* Remove extra padding */
+            height: 70px; /* Set consistent button height */
+            width: 250px; /* Set a fixed width for consistent button size */
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            color: black;
+            clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%, 10% 50%);
+            
+            margin-bottom: 5px; /* Optional: add spacing between buttons */
+        }
+        .button2{
+            background-color: #B0B0B0;
+            font-size: 16px;
+            padding: 15px 50px;
+        }
+        .button3{
+            background-color: #888888;
+            font-size: 16px;
+            padding: 15px 40px;
+        }
+        .button4{
+            background-color: #7F7B7B;
+            font-size: 16px;
+            padding: 15px 15px 5px 0px;
+        }
+        .button5{
+            background-color: #423F40;
+            font-size: 16px;
+            padding: 10px 20px;
+            color: white;
+        }
+    
+        .spacing{
+            content: "";
+            width: 100%;
+            height: 100px;
+        }
+        .button-p{
+            font-size: 12px
+        }
+
+        /* Media Query for screens with max-width 768px (Mobile/Tablet) */
+        @media (max-width: 768px) {
+            /* Change dropdown width to fit mobile/tablet screen */
+        
+
+            /* Adjust button styles for mobile/tablet */
+            .button-wrapper {
+                width: 100%; /* Buttons take full width of container */
+                margin: 0; /* Remove extra margins */
+            }
+
+            /* Optional: Adjust button size for smaller screens */
+            .button1, .button2, .button3, .button4, .button5 {
+                width: 100%; /* Make buttons take full width on small screens */
+                height: 50px; /* Adjust height for smaller screens */
+                font-size: 14px; /* Adjust font size for better readability */
+            }
+        }
+
+        /* Media Query for very small screens (e.g., mobile phones) with max-width 480px */
+        @media (max-width: 480px) {
+            /* For very small screens, adjust dropdown styles */
+            
+
+            /* Change button styles for smaller screens */
+            .button1, .button2, .button3, .button4, .button5 {
+                font-size: 14px; /* Smaller text on mobile */
+                height: 45px; /* Smaller height for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-wrapper">
+            <button class="button1">BERATUNGS- und PLANUNGS LEISTUNGEN</button>
+        </div>
+        <div class="button-container">
+            <div class="button-wrapper">
+                <button class="button2" onclick="toggleDropdown('dropdown1')">Bedarfsanalyse</button>
+                
+            </div>
+            <div class="button-wrapper">
+                <button class="button3" onclick="toggleDropdown('dropdown2')">Konzeptionierung</button>
+               
+            </div>
+            <div class="button-wrapper">
+                <button class="button4" onclick="toggleDropdown('dropdown3')">
+                    Fachplanung
+                </button>
+                
+            </div>
+            <div class="button-wrapper">
+                <button class="button5" onclick="toggleDropdown('dropdown4')">Umsetzung, Begleitung</button>
+                
+            </div>
+        </div>
+        <div class="spacing"></div>
+    </div>
+
+    <script>
+        function toggleDropdown(id) {
+            let dropdown = document.getElementById(id);
+            let allDropdowns = document.querySelectorAll('.dropdown');
+            allDropdowns.forEach(d => {
+                if (d.id !== id) {
+                    d.style.display = 'none';
+                }
+            });
+            dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+        }
+
+        document.addEventListener("click", function(event) {
+            let isClickInside = event.target.closest(".button-wrapper");
+            if (!isClickInside) {
+                document.querySelectorAll(".dropdown").forEach(d => d.style.display = "none");
+            }
+        });
+    </script>
+</body>
+</html>

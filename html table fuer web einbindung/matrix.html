@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filterable Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            flex-direction: column;
+        }
+        .filter-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            margin-bottom: 10px;
+        }
+        .filter-input {
+            flex-grow: 1;
+            padding: 5px;
+        }
+        .dropdown {
+            position: relative;
+            margin-left: 10px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 150px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            padding: 10px;
+            z-index: 1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            background: white;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+    <script>
+        function filterTable() {
+            let input = document.getElementById('general-filter');
+            let filter = input.value.toLowerCase();
+            let table = document.getElementById('data-table');
+            let tr = table.getElementsByTagName('tr');
+            
+            for (let i = 1; i < tr.length; i++) {
+                let tds = tr[i].getElementsByTagName('td');
+                let rowMatch = false;
+                for (let td of tds) {
+                    if (td) {
+                        let textValue = td.textContent || td.innerText;
+                        if (textValue.toLowerCase().indexOf(filter) > -1) {
+                            rowMatch = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = rowMatch ? "" : "none";
+            }
+        }
+        
+        function filterEmptyRows() {
+            let checkboxes = document.querySelectorAll('.column-filter:checked');
+            let selectedColumns = Array.from(checkboxes).map(cb => parseInt(cb.value));
+            let table = document.getElementById('data-table');
+            let tr = table.getElementsByTagName('tr');
+            
+            for (let i = 1; i < tr.length; i++) {
+                let tds = tr[i].getElementsByTagName('td');
+                let hideRow = selectedColumns.some(colIndex => tds[colIndex] && tds[colIndex].textContent.trim() === "");
+                tr[i].style.display = hideRow ? "none" : "";
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Filterable Table</h2>
+    <div class="filter-container">
+        <input type="text" id="general-filter" class="filter-input" onkeyup="filterTable()" placeholder="Search all columns">
+        <div class="dropdown">
+            <button>Filter Columns ▼</button>
+            <div class="dropdown-content">
+                <label><input type="checkbox" class="column-filter" value="2"> generelle Logistikthemen</label><br>
+                <label><input type="checkbox" class="column-filter" value="3"> Fördertechnik und Transporttechnik</label><br>
+                <label><input type="checkbox" class="column-filter" value="4"> Zentrallager Wirtschaftsgüter,Medikalprodukte etc</label><br>
+                <label><input type="checkbox" class="column-filter" value="5"> Küche / Speisenversorgung</label><br>
+                <label><input type="checkbox" class="column-filter" value="6"> ZSVA/ AEMP / Sterilgutversorgung</label><br>
+                <label><input type="checkbox" class="column-filter" value="7"> OP-Bereich</label><br>
+                <label><input type="checkbox" class="column-filter" value="8"> Stationslogistik / Modulversorgung</label><br>
+                <label><input type="checkbox" class="column-filter" value="9"> Apotheke/ Arzneimittel-versorgung</label><br>
+                <label><input type="checkbox" class="column-filter" value="10"> Wäscheversorgung</label><br>
+                <button onclick="filterEmptyRows()">Apply</button>
+            </div>
+        </div>
+    </div>
+    <table id="data-table">
+        <thead>
+            <tr>
+                <th>Bild</th>
+                <th>Projekt / Kunde</th>
+                <th>
+                    Inhalt</th>
+                <th>Zeitraum</th>
+                <th colspan="2">Leistungen</th>
+            </tr>
+            <tr>
+                <th colspan="2"></th>
+                <th>✔generelle Logistikthemen</th>
+                <th>Fördertechnik und Transporttechnik</th>
+                <th>Zentrallager Wirtschaftsgüter,Medikalprodukte etc</th>
+                <th>Küche / Speisenversorgung</th>
+                <th>ZSVA/ AEMP / Sterilgutversorgung</th>
+                <th>OP-Bereich</th>
+                <th>Stationslogistik / Modulversorgung</th>
+                <th>Apotheke/ Arzneimittel-versorgung</th>
+                <th>Wäscheversorgung</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>St. Marienhospital Vechta </td>
+                <td>Erstellung Logistikkonzeption für Neubau in mehreren Bauphasen - inkl. AMR-Fördertechnik </td>
+                <td> 11/2023 </td>
+                <td>Ingenieur</td>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>
+                    Ammerlandklinik, Westerstede</td>
+                <td>
+                    Erstellung Logistikkonzeption für Neubau und Bestand inkl. Bundeswehr-Krankenhaus - inkl. AMR-Fördertechnik</td>
+                <td>08/2023</td>
+                <td>UK</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>
+                    cts Saarbrücken, St. Theresia-Krankenhaus</td>
+                <td>Erstellung Logistikkonzeption für Neubau und Bestand - inkl. AMR-Fördertechnik</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>Klinikum Neumarkt</td>
+                <td> Erstellung Logistikkonzeption für Neubau und Bestand - inkl. AMR-Fördertechnik</td>
+                <td>07/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>
+                    Rhön-Klinikum AG</td>
+                <td>Erstellung Logistikkonzeption für Neubau und Bestand - inkl. AMR-Fördertechnik</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>
+                    Ev. Krankenhausgemeinschaft Herne Castrop-Rauxel</td>
+                <td>Erstellung Logistikkonzeption für Neubau und Bestand - inkl. AMR-Fördertechnik</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>
+                    cts Saarbrücken, St. Theresia-Krankenhaus</td>
+                <td>Analyse der Transporttechniken für die Ver- u Entsorgung des Neubaus inkl. Berücksichtigung der Bestandsbereiche</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>
+                    cts Saarbrücken, St. Theresia-Krankenhaus</td>
+                <td>Erstellung Logistikkonzeption für Neubau und Bestand - inkl. AMR-Fördertechnik</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>Klinikum Nürnberg / LUDES, Arch+Ing, Reck.</td>
+                <td>Logistikplanungen für den 2.BA am Klinikum Nürnberg Süd, Notfallzentrum</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>
+                    Ev. Krankenhausgemeinschaft Herne Castrop-Rauxel</td>
+                <td>Analyse und Empfehlungen zur Logistikoptimierung des zentralen-OP-Bereichs im KH Herne</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>Klinikum St. Georg, Leipzig</td>
+                <td>
+                    Logistikplanungen für die Fördertechnikumsetzung im Neubau Zentralbau II und zusätzliche Neubaukörper</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> LVR Klinik Bonn</td>
+                <td>Logistikanalyse und Neukonzeption der Apotheke inkl. Umstellung auf eine Unit-Dose-Versorgung</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> Kliniken Region Hannover Servicegesellschaft</td>
+                <td>Prüfung und Berechnung der Schranklagerkapazitäten für den Erweiterungsbau des Klinikums Gehrden</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Klinikum Nürnberg Service GmbH</td>
+                <td>
+                    Konzeption der Versorgungsdienste (Grundlagenplanung)</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> Kliniken Region Hannover Servicegesellschaft</td>
+                <td>
+                    Konzeption der Transportlogistik für das Klinikum Gehrden (Erweiterungsbau) im KRH-Verbund</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Zentralklinik Landkreis Diepholz</td>
+                <td>
+                    Erstellung Groblogistikkonzept u Logistikplanung für einen Krankenhausneubau (Zentralklinikum im Kreis Diepholz) zu allen Logistikthemen</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    FMSH (Lübeck)</td>
+                <td>Aktualisierung der Zentrallagerplanung für das UKSH Kiel</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                   Kliniken Region Hannover Servicegesellschaft</td>
+                <td>
+                    Logistikstandortanalyse für das Klinikum Nordstadt im KRH-Verbund</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Klinikum Nürnberg Service GmbH</td>
+                <td>Konzeption einer zentralen Speisenversorgung für alle Einrichtungen des Klinikums Nürnberg</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Main-Spessart-Klinikum, Krankenhaus Lohr am Main</td>
+                <td>Zentrallager-Planung im Rahmen eines Neubauvorhabens</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Klinikon (Bezirksklinikum Mainkofen, Deggendorf)</td>
+                <td>Planung zur Erweiterung des Zentrallagers; räumlich, organisatorisch und Einbezug weiterer Produktgruppen </td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Klinikum Nürnberg</td>
+                <td>Logistische Grundlagenplanung (Bettenaufbereitung, Wäscheversorgung) für den 2.BA Kl Nbg Süd, Notfallzentrum</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Klinikum Nürnberg / LUDES, Arch+Ing, Reck.</td>
+                <td>Logistikplanungen für den 1.BA am Klinikum Nürnberg Süd, Eltern-Kind-Zentrum und Wirtschaftshof</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Trägergesellschaft Kliniken Aurich, Emden, Norden</td>
+                <td>
+                    Erstellung Groblogistikkonzept für einen Krankenhausneubau (Zentralklinik Georgsheil) zu allen Logistikthemen</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Asklepios Brandenburg, Lübben, Teupitz</td>
+                <td>Analyse und Empfehlung zu den internen Transportdiensten (Waren- u Patientenlogistik)</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Dreifaltigkeitshospital Lippstadt</td>
+                <td>Analyse und Empfehlung zur Transportlogistik von Sterilgütern (aus neu platzierter AEMP) speziell OP-Anbindung</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Orthopädische Kliniken, Hessisch-Lichtenau</td>
+                <td>Analyse und Optimierung der Strukturen und Prozesse im OP-Bereich</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>vv<tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>UKSH (Campus Kiel) </td>
+                <td>
+                    Zentrallagerplanung in einem Bestandsgebäude inkl. Umschlagszentralisierung und Integration der Apotheke für den Campus Kiel</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Orthopäd. Klinik, Hessisch-Lichtenau</td>
+                <td>Optimierung der Stationsversorgung (Modulversorgung); mit Stationsumbau beginnend; Umbau Zentrallager</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr><tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Gesundheit Nordhessen Hold. Städt. Kliniken Kassel</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    VAMED (Städtisches Klinikum Karlsruhe)</td>
+                <td>
+                    Kurzanalyse: Bewertung einer Realisierung von Logistik-Fördertechniken (FTS) zum Einsatz in der inhouse-Logistik </td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>Gemeinschaftskrankenhaus Bonn (St.Johannes, St.Elisabeth, St.Petrus)</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Gesundheit Nordhessen Hold. Städt. Kliniken Kassel</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Gesundheit Nordhessen Hold. Städt. Kliniken Kassel</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Gesundheit Nordhessen Hold. Städt. Kliniken Kassel</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Gesundheit Nordhessen Hold. Städt. Kliniken Kassel</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Gesundheit Nordhessen Hold. Städt. Kliniken Kassel</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Gesundheit Nordhessen Hold. Städt. Kliniken Kassel</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Gesundheit Nordhessen Hold. Städt. Kliniken Kassel</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td> 
+                    Gesundheit Nordhessen Hold. Städt. Kliniken Kassel</td>
+                <td>Grundlagen-Konzeption für eine Zentral-Apotheke der GNH / Grundlagenplanung nach HOAI als Entscheidungsvorlage</td>
+                <td>08/2023 </td>
+                <td>Australia</td>
+            </tr>
+
+        </tbody>
+    </table>
+</body>
+</html>

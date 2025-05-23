@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelle mit Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            margin-bottom: 10px;
+            padding: 5px;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tabelle mit Filter</h2>
+    <input type="text" id="filterInput" onkeyup="filterTable()" placeholder="Suche...">
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Bild</th>
+                <th>Projekt / Kunde</th>
+                <th>
+                    Inhalt</th>
+                <th>Zeitraum</th>
+                <th>generelle Logistikthemen</th>
+                <th>Fördertechnik und Transporttechnik</th>
+                <th>Zentrallager Wirtschaftsgüter,Medikalprodukte etc</th>
+                <th>Küche / Speisenversorgung</th>
+                <th>ZSVA/ AEMP / Sterilgutversorgung</th>
+                <th>OP-Bereich</th>
+                <th>OP-Bereich</th>
+                <th>Stationslogistik / Modulversorgung</th>
+                <th>Apotheke/ Arzneimittel-versorgung</th>
+                <th>Wäscheversorgung</th>
+            </tr>
+            
+
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td><img src="max.jpg" alt="Max"></td>
+                <td>St. Marienhospital Vechta </td>
+                <td>Erstellung Logistikkonzeption für Neubau in mehreren Bauphasen - inkl. AMR-Fördertechnik </td>
+                <td> 11/2023 </td>
+                <td>Ingenieur</td>
+                <td>A</td>
+                <td>B</td>
+                <td>C</td>
+                <td>D</td>
+                <td>E</td>
+            </tr>
+            <tr>
+                <td><img src="lisa.jpg" alt="Lisa"></td>
+                <td>Lisa Schmidt</td>
+                <td>25</td>
+                <td>Lehrerin</td>
+                <td>F</td>
+                <td>G</td>
+                <td>H</td>
+                <td>I</td>
+                <td>J</td>
+            </tr>
+            <tr>
+                <td><img src="john.jpg" alt="John"></td>
+                <td>John Doe</td>
+                <td>40</td>
+                <td>Entwickler</td>
+                <td>K</td>
+                <td>L</td>
+                <td>M</td>
+                <td>N</td>
+                <td>O</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <script>
+        function filterTable() {
+            let input = document.getElementById("filterInput");
+            let filter = input.value.toLowerCase();
+            let table = document.getElementById("tableBody");
+            let tr = table.getElementsByTagName("tr");
+            
+            for (let i = 0; i < tr.length; i++) {
+                let tds = tr[i].getElementsByTagName("td");
+                let found = false;
+                for (let j = 1; j < tds.length; j++) { // Start bei 1, um Bilder nicht zu filtern
+                    if (tds[j]) {
+                        let textValue = tds[j].textContent || tds[j].innerText;
+                        if (textValue.toLowerCase().indexOf(filter) > -1) {
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                tr[i].style.display = found ? "" : "none";
+            }
+        }
+    </script>
+</body>
+</html>

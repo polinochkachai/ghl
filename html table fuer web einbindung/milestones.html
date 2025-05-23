@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Timeline</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        .timeline {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            padding: 50px 0;
+        }
+
+        .line {
+            position: absolute;
+            width: 4px;
+            background-color: #747E7A;
+            z-index: 0;
+        }
+
+        .line.left {
+            top: 80px; /* Starting from Milestone 0 */
+            bottom: 330px; /* Ends at Milestone 5 */
+            left: 25%;
+        }
+
+        .line.right {
+            top: 215px; /* Starting from Milestone 0 */
+            bottom: 330px; /* Ends at Milestone 5 */
+            left: 65%;
+        }
+
+        .line.to-center {
+            position: absolute;
+            width: 4px;
+            background-color: #333;
+            top: calc(100% - 150px);
+            height: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .milestone {
+            position: relative;
+            margin-bottom: 70px;
+            width: 35%;
+            padding: 15px;
+            background-color: white;
+            border-radius: 4px;
+            border: 6px solid #8EBF68;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+
+        .milestone.left {
+            left: 0;
+        }
+
+        .milestone.right {
+            left: 55%;
+        }
+
+        .milestone.center {
+            position: relative;
+            margin: 100px auto 100px;
+            width: 50%;
+            padding: 20px;
+            background-color: white;
+            border: 6px solid #8EBF68;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1;
+            text-align: center;
+        }
+
+        .icon {
+            position: absolute;
+            width: 160px;
+            height: 80px;
+            background-color: white;
+            
+        }
+
+        .icon.left {
+            top: 50%;
+            transform: translateY(-50%);
+            right: -200px;
+        }
+
+        .icon.right {
+            margin-top: 10px;
+            top: 0%;
+            transform: translateY(-50%);
+            left: -87px;
+            width: 80px;
+            height: 160px;
+            background-color: white;
+        }
+        .icon.topa{
+            transform: translateY(-50%);
+            top: -47px;
+            left:0px;
+            
+        }
+        .icon.topb{
+            transform: translateY(-50%);
+            top: -47px;
+            left:200px;
+        }
+        .icon.mandamehr{
+            position: absolute;
+            width: 180px;
+            height: 80px;
+            background-color: white;
+            transform: translateY(-50%);
+            top: -45px;
+            left:0px;
+            
+        }
+
+        .milestone h3 {
+            margin: 0;
+            font-size: 22px;
+        }
+
+        .milestone p {
+            margin: 5px;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <div class="milestone left">
+            
+            <img class="icon left" src="csm_hafcon-logo_98d107cd7e.png" alt="Icon 1"> 
+            
+            <h3>10/2006​ - Gründung von hafCON</h3>
+            <p>Mit den Themen:​
+                <li>Logistik, Speisenversorgung,​</li>
+                <li>​Sterilgutversorgung, QM,​</li>
+                <li>OP-Organisation​</li>​</p>
+        </div>
+
+        <div class="milestone right">
+            <img class="icon mandamehr" src="mandamehrold.png" alt="Icon 1">
+            <h3>2008​ - Gründung von mandamehr​</h3>
+            <p>management – consulting – training</p>
+        </div>
+
+        <div class="line left"></div>
+        <div class="line right"></div>
+
+        <div class="milestone center">
+            <img class="icon topa" src="wgkt-logo-260-40.png" alt="Icon 1">
+            <img class="icon topb" src="GEFMA-Logo.png" alt="Icon 1">
+            <h3>2009​ - Erstes Kennenlernen​</h3>
+            <p>über Projektarbeit der GEFMA / WGKT​</p>
+        </div>
+
+        <div class="milestone left">
+            <h3>Seit 2013 Konzentration​ auf LOGISTIK-Themen​ Mikro- u Makrologistik​</h3>
+            <p>Projekte:​
+                <li>Planung von Versorgungszentren und Wirtschaftshöfen​</li>
+                <li>Zentrallagerplanung inkl. steriler Medikalprodukte​</li>
+                <li>Gesamtlogistikkonzepte für Klinikergänzungen oder Campusstrukturen </li>
+                <li>Fachplanerische Begleitung von Baumaßnahmen bzgl. Logistik</li>
+                </p>
+        </div>
+        
+        <div class="milestone center">
+            <img class="icon topa" src="Bettenmanagement4.0-720x547.png" alt="Icon 1">
+            <img class="icon topb" src="medmehrlogo.png" alt="Icon 1">
+            <h3>2019​ - Zusammenarbeit im Forschungsprojekt ​
+                „Bettenmanagement 4.0“​​</h3>
+            
+        </div>
+        <div class="milestone right">
+            <img class="icon mandamehr" src="mandamehr.png" alt="Icon 1">
+            <h3>2021​- Umfirmierung zu ​mandamehr Institut für Raum und Gesundheit GmbH</h3>
+            
+            
+        </div>
+
+        <div class="milestone left">
+            
+            <h3>2023​ - Vertiefung in die ​AMR-Technologie</h3>
+            
+        </div>
+
+        <div class="milestone right">
+            <img class="icon right" src="greenhealth-lab-logo.png" alt="Icon 1">
+            <h3>2024​ - Übernahme des Betriebs​ des Real Labors „green health LAB“</h3>
+           
+        </div>
+        <div class="milestone center">
+            <img class="icon mandamehr" src="mandamehr.png" alt="Icon 1">
+            <img class="icon topb" src="csm_hafcon-logo_98d107cd7e.png" alt="Icon 1">
+            <h3>Seit 2024​ - Strategische Partnerschaft​​​</h3>
+            
+        </div>
+        <div class="milestone center">
+            
+            <h3>01.01.2025​ -Integration ​hafCON</h3>
+            
+        </div>
+        <div class="milestone center">
+            
+            <h3>01.01.2025​ -Integration ​hafCON​​​</h3>
+            
+        </div>
+        
+    
+    </div>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const milestones = document.querySelectorAll('.milestone');
+            const triggerBottom = window.innerHeight * 0.8;
+
+            milestones.forEach(milestone => {
+                const milestoneTop = milestone.getBoundingClientRect().top;
+
+                if (milestoneTop < triggerBottom) {
+                    milestone.style.opacity = '1';
+                    milestone.style.transform = 'translateY(0)';
+                } else {
+                    milestone.style.opacity = '0';
+                    milestone.style.transform = 'translateY(100px)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

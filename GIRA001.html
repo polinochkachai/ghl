@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Responsive Info Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo section -->
+    <div class="logo">
+        <img src="static/src/mandamehr_Wort_Bildmarke_Slogan.jpg" alt="medmehr" class= "logo_medmehr">
+        <img src="static/src/ghL_Logo.jpg" alt="ghl" class= "logo_ghl">
+    </div>
+    
+    <!-- Product Section -->
+    <div class="product-info">
+        <div class="carousel-container">
+            <button class="nav-button left" onclick="changeImage(-1)">&#10094;</button>
+            
+            <div class="carousel-images">
+                <img src="static/src/WoStVideoAP7-weiss-Tuerruf-DE_Betonwand_verkleinert_ISOcoatedv2-300.png" alt="Product Image" class="product-image">
+                <img src="static/src/WoStVideoAP7-schwarz-DE_Bewegungsmelder_Orientierungsleuchten_Milieu-Flur-Nacht_ISOcoatedv2-300.png" alt="Product Image" class="product-image">
+            </div>
+            
+            <button class="nav-button right" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    
+        <h3>Gira Giersiepen GmbH & Co. KG</h3>
+        <h2>Gira Wohnungsstation Video AP 7</h2>
+       
+        <p>
+            Das Gira Türkommunikationssystem ermöglicht eine Audio- und/oder Video-Kommunikation von der Haustür in das Gebäude. 
+            Die Gira Wohnungsstation Video AP7 ist eine moderne Innenstation mit 7"-Touchdisplay, die Bild und Ton von der Türstation empfängt, 
+            Türöffner steuert und sich nahtlos in die Gebäudesteuerung integrieren lässt.</p>
+    
+        
+    </div>
+
+    <!-- Expandable Button Sections -->
+    <div class="expandable-section" id="mehr-information">
+        <button class="accordion accordion-mehr">
+            <img src="static/src/ri_more-fill.svg" class="icon-left" alt="Mehr Icon" />
+            <span class="accordion-text">Mehr Informationen</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p><a href="https://www.gira.de/produkte/tuersprechanlagen#" class="link-text">Noch mehr Informationen hier</a> und auch <a href="https://partner.gira.de/data3/BR_Gira_Health_Care_1814410_04_2024.pdf" class="link-text">hier</a> </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="nachhaltigkeitsaspekte">
+        <button class="accordion accordion-eco">
+            <img src="static/src/material-symbols_eco.svg" class="icon-left" alt="Leaf Icon" />
+            <span class="accordion-text">Nachhaltigkeit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p> <ul>
+                <li>Die Gira Türkommunikation ist  langlebig, modular erweiterbar und energieeffizient. 
+                Sie kann in bestehende Systeme integriert und bei Modernisierungen weiterverwendet werden.
+                Das System steht für nachhaltige Gebäudetechnik. 
+                </li> 
+            </ul>
+            </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="gesundheit">
+        <button class="accordion accordion-health">
+            <img src="static/src/solar_health-bold.svg" class="icon-left" alt="Safety Icon" />
+            <span class="accordion-text">Gesundheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>
+               Sehen wer vor der Tür steht. Mit dem Gira Türkommunikationssystem mit Video-Funktion können Bewohner sicher prüfen, wer vor der Tür steht, ohne diese zu öffnen. Das erhöht das subjektive Sicherheitsgefühl, reduziert Stress und schützt vor ungebetenen Gästen – besonders wichtig für vulnerable Gruppen wie Senioren oder Pflegebedürftige.
+            </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="sicherheit">
+        <button class="accordion accordion-safety">
+            <img src="static/src/material-symbols_health-and-safety.svg" class="icon-left" alt=" Health Icon" />
+            <span class="accordion-text">Sicherheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p><ul>
+                <li>Das Gira Türkommunikationssystem bietet per Audio- und Videoübertragung, sichere Türöffnung und  Zutrittskontrolle.
+</li>
+<li>Die Gira Wohnungsstation Video AP 7 verbindet Wohnkomfort mit Sicherheit und beeindruckt durch ihr puristisches Design.</li>
+            </ul></p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="digitalisierung">
+        <button class="accordion accordion-digit">
+            <img src="static/src/streamline_ai-technology-spark-solid.svg" class="icon-left" alt="Digitalisierung Icon" />
+            <span class="accordion-text">Digitalisierung</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Das Gira Türkommunikationssystem kann über das TKS-IP-Gateway mit Computern, Tablets, Smartphones und dem Gira G1 vernetzt werden. Die Wohnungsstation Video AP7 lässt sich in die KNX-Gebäudesteuerung einbinden und unterstützt zentrale Überwachung, Videodokumentation und flexible Alarmierung.</p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="hygieneaspekt">
+        <button class="accordion accordion-hygiene">
+            <img src="static/src/ic_round-clean-hands.svg" class="icon-left" alt="Hygieneaspekt Icon" />
+            <span class="accordion-text">Hygieneaspekt</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Die Gira Wohnungsstation Video AP7 verfügt über ein leicht zu reinigendes Touchdisplay. Viele Funktionen lassen sich kontaktarm oder per Fingertipp bedienen.</p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h4>Kontakt</h4>
+        <p><a href="www.gira.de" class="link-text">Gira Giersiepen GmbH & Co. KG </a></p>
+        <p>Industriegebiet Mermbach, Dahlienstraße | 42477 Radevormwald | Deutschland</p>
+        <p>Jürgen Langenhorst | Key Account Projektmanager Health Care</p>
+        <p>Telefon +49 173 7296550 | <a href="mailto:juergen.langenhorst@gira.de" class="link-text">juergen.langenhorst@gira.de</a></p>
+    </div>
+    <div class="footer-banner">
+        <img src="static/src/BannerMandaMedGreen.png" alt="Footer Banner">
+    </div>
+</div>
+
+<script src="static/script.js"></script>
+</body>
+</html>
+
+

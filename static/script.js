@@ -16,3 +16,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+const images = document.querySelectorAll(".carousel-images img");
+let currentIndex = 0;
+
+function showImage(index) {
+  images.forEach((img, i) => {
+    img.classList.toggle("active", i === index);
+  });
+}
+
+function changeImage(direction) {
+  currentIndex = (currentIndex + direction + images.length) % images.length;
+  showImage(currentIndex);
+}
+
+// Initialize first image as visible
+showImage(currentIndex);

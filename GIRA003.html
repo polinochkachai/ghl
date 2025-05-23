@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Responsive Info Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo section -->
+    <div class="logo">
+        <img src="static/src/mandamehr_Wort_Bildmarke_Slogan.jpg" alt="medmehr" class= "logo_medmehr">
+        <img src="static/src/ghL_Logo.jpg" alt="ghl" class= "logo_ghl">
+    </div>
+    
+    <!-- Product Section -->
+    <div class="product-info">
+        <div class="carousel-container">
+            <button class="nav-button left" onclick="changeImage(-1)">&#10094;</button>
+            
+            <div class="carousel-images">
+                <img src="static/src/G1_Milieu-EFH-Bodensee-08b_MS-03_ISOcoatedv2-300.png" alt="Product Image" class="product-image">
+                <img src="static/src/209600_Fontal.png" alt="Product Image" class="product-image">
+                <img src="static/src/G1_weiß_Frontal_Funktionsuebersicht-HealthCare_DE_ISOcoatedv2-300.png" alt="Product Image" class="product-image">
+                
+            </div>
+            
+            <button class="nav-button right" onclick="changeImage(1)">&#10095;</button>
+        </div>
+    
+        <h3>Gira Giersiepen GmbH & Co. KG</h3>
+        <h2>Gira G1</h2>
+       
+        <p>
+            Gira G1 ist eine intuitive Bedienzentrale für intelligente Gebäudetechnik. Darüber lassen sich sämtliche Gebäudefunktionen wie Licht, Heizung, Jalousien, Klima und Türkommunikation zentral bedienen. 
+            In Kombination mit Gira X1 oder Gira HomeServer werden Automatisierung, Fernzugriff und individuelle Szenarien für Wohn-, Pflege- und Arbeitsumgebungen ermöglicht. Das System eignet sich für Neubau, Nachrüstung und Modernisierung 
+            und verbindet Komfort, Effizienz und Design.</p>
+    
+        
+    </div>
+
+    <!-- Expandable Button Sections -->
+    <div class="expandable-section" id="mehr-information">
+        <button class="accordion accordion-mehr">
+            <img src="static/src/ri_more-fill.svg" class="icon-left" alt="Mehr Icon" />
+            <span class="accordion-text">Mehr Informationen</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+
+            <p><a href="https://partner.gira.de/systeme/knx-system/knx-produkte/bediengeraete/g1/features.html#cms-anchor-features" class="link-text">Noch mehr Informationen hier</a> und auch <a href="https://partner.gira.de/data3/BR_Gira_Health_Care_1814410_04_2024.pdf " class="link-text">hier</a> </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="nachhaltigkeitsaspekte">
+        <button class="accordion accordion-eco">
+            <img src="static/src/material-symbols_eco.svg" class="icon-left" alt="Leaf Icon" />
+            <span class="accordion-text">Nachhaltigkeit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p> <ul>
+                <li>Automatisierung und Sensorik ermöglichen, in Verbindung mit dem Gira X1 oder Gira HomeServer, eine bedarfsgerechte Steuerung von Heizung, Licht und Verschattung. So wird nur dann Energie verbraucht, wenn sie benötigt wird. Verbrauchsanalysen und zentrale Abschaltung helfen, Ressourcen zu schonen und Energieeffizienz zu steigern. </li> 
+            </ul>
+            </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="gesundheit">
+        <button class="accordion accordion-health">
+            <img src="static/src/solar_health-bold.svg" class="icon-left" alt="Safety Icon" />
+            <span class="accordion-text">Gesundheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>
+              Durch die gezielte Steuerung von Raumklima, Licht und Luftqualität sorgt der Gira G1 als Bediengerät in KNX Gebäudeautomation für ein angenehmes, gesundes Umfeld. Automatisierte Abläufe und individuelle Einstellungen fördern das Wohlbefinden.
+            </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="sicherheit">
+        <button class="accordion accordion-safety">
+            <img src="static/src/material-symbols_health-and-safety.svg" class="icon-left" alt=" Health Icon" />
+            <span class="accordion-text">Sicherheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p><ul>
+                <li>Der Gira G1 kann als KNX Bediengerät, eNet SMART HOME Client, HomeServer Client, Gira X1 Client oder in Verbindung mit dem TKS-​IP-Gateway auch als Wohnungsstation für die Türkommunikation eingesetzt werden.</li> 
+
+                <li>Störungen und Alarme können per push notification auf dem Gira G1 angezeigt werden, z. B. Wind- und Wetteralarme, Leckagemeldungen.</li>
+            </ul></p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="digitalisierung">
+        <button class="accordion accordion-digit">
+            <img src="static/src/streamline_ai-technology-spark-solid.svg" class="icon-left" alt="Digitalisierung Icon" />
+            <span class="accordion-text">Digitalisierung</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Über Gira HomeServer oder X1 können Zustandsdaten und Energieverbräuche zentral erfasst, visualisiert und analysiert werden. Das Pflegepersonal kann über das Gira G1 oder Wand-PCs alle Räume und Gebäudebereiche im Überblick behalten, Raumszenarien steuern und gezielt auf Störungen oder Notfälle reagieren.</p></div>
+    </div>
+
+    <div class="expandable-section" id="hygieneaspekt">
+        <button class="accordion accordion-hygiene">
+            <img src="static/src/ic_round-clean-hands.svg" class="icon-left" alt="Hygieneaspekt Icon" />
+            <span class="accordion-text">Hygieneaspekt</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Mit dem Gira G1 im KNX System können Funktionen per Fingertipp auf einer leicht zu reinigenden Glasoberfläche gesteuert werden. Das Gehäuse besteht aus ausgewählten, langlebigen Materialien wie kratzfestem Spezialglas und einem glasfaserverstärkten Rahmen. </p> </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h4>Kontakt</h4>
+        <p><a href="www.gira.de" class="link-text">Gira Giersiepen GmbH & Co. KG </a></p>
+        <p>Industriegebiet Mermbach, Dahlienstraße | 42477 Radevormwald | Deutschland</p>
+        <p>Jürgen Langenhorst | Key Account Projektmanager Health Care</p>
+        <p>Telefon +49 173 7296550 | <a href="mailto:juergen.langenhorst@gira.de" class="link-text">juergen.langenhorst@gira.de</a></p>
+    </div>
+    <div class="footer-banner">
+        <img src="static/src/BannerMandaMedGreen.png" alt="Footer Banner">
+    </div>
+</div>
+
+<script src="static/script.js"></script>
+</body>
+</html>
+
+
