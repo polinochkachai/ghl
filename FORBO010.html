@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Responsive Info Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo section -->
+    <div class="logo">
+        <img src="static/src/mandamehr_Wort_Bildmarke_Slogan.jpg" alt="medmehr" class= "logo_medmehr">
+        <img src="static/src/ghL_Logo.jpg" alt="ghl" class= "logo_ghl">
+    </div>
+    
+    <!-- Product Section -->
+    <div class="product-info">
+        <img src="static/src/Forbo Flooring_Sphera.jpg" alt="Product Image" class="product-image">
+        <h3>Forbo Flooring GmbH</h3>
+        <h2>Sphera</h2>
+        <p>Homogene Vinylbeläge</p>
+    
+    </div>
+
+    <!-- Expandable Button Sections -->
+    <div class="expandable-section" id="mehr-information">
+        <button class="accordion accordion-mehr">
+            <img src="static/src/ri_more-fill.svg" class="icon-left" alt="Mehr Icon" />
+            <span class="accordion-text">Mehr Informationen</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Diese Sphera Bodenbeläge sind aufgrund ihrer Widerstandsfähigkeit, leichten Reinigung, hervorragender Hygiene und langen Nutzungsdauer besonders für den Einsatz im Gesundheitswesen geeignet. Erhältlich sind diese Vinylbeläge in Bahnen und Fliesen und werden im Objektbereich mit intensiver Beanspruchung eingesetzt.
+            </p>
+            <br>
+            <a href="https://www.forbo.com/flooring/de-de/produkte/homogene-vinylbelaege/sphera-element/sphera-element/byoebi" class="link-text"> Mehr Information hier.</a>
+         
+        </div>
+    </div>
+
+    <div class="expandable-section" id="nachhaltigkeitsaspekte">
+        <button class="accordion accordion-eco">
+            <img src="static/src/material-symbols_eco.svg" class="icon-left" alt="Leaf Icon" />
+            <span class="accordion-text">Nachhaltigkeit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            
+            <p>
+                <ul>
+                <li>
+                   Sphera ist zu 100 % phthalatfrei und hat sehr niedrige Emissionen. Damit sind die besten Grundlagen für ein angenehmes Raumklima gegeben.
+                </li>
+                <li>
+                    Bei der Herstellung werden 100 % erneuerbare Energien verwendet und alle relevanten Qualitäts- und Umweltstandards eingehalten. Das Herstellwerk ist nach ISO 14001 Umweltmanagement zertifiziert und wird regelmäßig hinsichtlich Umweltverbesserungen auditiert.
+                </li>
+                <li>
+                    Im Herstellwerk wird sämtliche Bodenbelags-Abfalle wieder in den Produktionskreislauf gebracht. Verschnittreste von den Baustellen können gesammelt und mit der Forbo „Take back“ Aktion wieder in den Kreislauf gebracht werden. Das entlastet den Rohstoffbedarf bei der Herstellung
+                </li>
+                <li>
+                  Sämtliche Umwelteinflüsse über den gesamten Lebenszyklus können der aktuellen EPD entnommen werden.
+                </li>
+            </ul>
+            </p></div>
+
+    <div class="expandable-section" id="gesundheit">
+        <button class="accordion accordion-health">
+            <img src="static/src/solar_health-bold.svg" class="icon-left" alt="Safety Icon" />
+            <span class="accordion-text">Gesundheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>
+                <ul>
+                <li>
+                    Durch die werkseitig aufgebrachte PUR Oberflächenvergütung wird die Schmutzanhaftung vermindert und die Reinigung und damit die Hygiene unterstützt.
+                </li>
+                <li>
+                  Sphera Bodenbeläge sind hervorragend und dauerhaft gegen Flächen- und Hautdesinfektionsmittel beständig.
+                </li>
+                <li>
+                   Geringe Emissionen des Bodenbelages unterstützen eine angenehme Raumluft.
+                </li>
+                
+            </ul>
+            </p>
+        </div>
+
+    <div class="expandable-section" id="sicherheit">
+        <button class="accordion accordion-safety">
+            <img src="static/src/material-symbols_health-and-safety.svg" class="icon-left" alt=" Health Icon" />
+            <span class="accordion-text">Sicherheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Durch die ISO 14001 Umweltzertifizierung und die Indoor Air Comfort Gold Zertifizierung und die jeweils regelmäßigen Audits werden dauerhaft ökologische und Hygieneanforderungen überprüft.
+            </p>
+        
+        </div>
+    </div>
+
+    <div class="expandable-section" id="digitalisierung">
+        <button class="accordion accordion-digit">
+            <img src="static/src/streamline_ai-technology-spark-solid.svg" class="icon-left" alt="Digitalisierung Icon" />
+            <span class="accordion-text">Digitalisierung</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Mit BIM (Building Information Modeling) wird die Grundlage geschaffen, dass alle Projektbeteiligten auf ein zentrales Datenmodell zugreifen können. Dabei werden alle relevanten Daten als gemeinsame Informationsbasis digital erfasst, gespeichert und vernetzt.</p>
+            <br>
+            <p>Die BIM-Daten des Produktes können Sie über die BIM Object-Cloud kostenlos <a href="https://productsite.bimobject.com/de/forbo/privatecloud/german/?listorder=productname" class="link-text"> herunterladen.</a></p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="hygieneaspekt">
+        <button class="accordion accordion-hygiene">
+            <img src="static/src/ic_round-clean-hands.svg" class="icon-left" alt="Hygieneaspekt Icon" />
+            <span class="accordion-text">Hygieneaspekt</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p><ul>
+                <li>
+                    Sehr geringe Emissionen des Bauproduktes unterstützen ein gesundes Raumklima.
+
+                </li>
+                <li>Sphera Bodenbeläge sind hervorragend gegen Flächen- und Hautdesinfektionsmittel beständig.
+                </li>
+            </ul>
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h4>Kontakt</h4>
+        <a href="https://www.forbo.com/corporate/de-gl/" class="link-text">Forbo Flooring GmbH</a>
+        <p>Steubenstraße 27, 33100 Paderborn</p>
+        <p>Jens Puda | Segment Manager Health & Elderly Care</p>
+        <p><b>Telefon:</b> +49 175 5753625 | <b>Email:</b> jens.puda@forbo.com</p>
+    </div> 
+    <div class="footer-banner">
+        <img src="static/src/BannerMandaMedGreen.png" alt="Footer Banner">
+    </div>
+
+</div>
+<script src="static/script.js"></script>
+</body>
+</html>
