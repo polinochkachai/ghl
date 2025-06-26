@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Responsive Info Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo section -->
+    <div class="logo">
+        <img src="static/src/mandamehr_Wort_Bildmarke_Slogan.jpg" alt="medmehr" class= "logo_medmehr">
+        <img src="static/src/ghL_Logo.jpg" alt="ghl" class= "logo_ghl">
+    </div>
+    
+    <!-- Product Section -->
+    <div class="product-info">
+        <img src="static/src/kessel001.png" alt="Product Image" class="product-image">
+        <h3>KESSEL SE + Co. KG</h3>
+        <h2>Duschrinne Linearis Infinity</h2>
+        <p>Oberfläche aus Edelstahl V4A gebürstet, Länge 1400 mm, Wasserwiderstandsklasse W3</p>
+        
+        
+        
+    </div>
+
+    <!-- Expandable Button Sections -->
+    <div class="expandable-section" id="mehr-information">
+        <button class="accordion accordion-mehr">
+            <img src="static/src/ri_more-fill.svg" class="icon-left" alt="Mehr Icon" />
+            <span class="accordion-text">Mehr Informationen</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Die schmale, bodengleiche Duschrinne Linearis Infinity ist für die
+Linienentwässerung im Innenbereich für den häuslichen und gewerblichen Bereich
+geeignet. Das Rinnenprofil aus Edelstahl 1.4404 (V4A) ist gerade oder in drei
+Winkeln (30, 45 und 90 Grad) verlängerbar. Der Grundkörper aus PP ist mit Schallund Setzungsdämpfern ausgestattet. Diese vermindern Betriebsgeräusche und
+können Setzungen des Bodenaufbaus ausgleichen. Die Rinne enthält einen
+Klipsflansch mit werkseitig angebrachter Dichtmanschette nach DIN EN 1253-1 und
+DIN 18534-1-W3-I. Das Rinnenprofil kann zum Ausgleich von Bautoleranzen im
+Klipsflansch in Längs- und Querrichtung verschoben werden. Inklusive
+Geruchsverschluss mit 50 mm Wasservorlage. Sickerwasseröffnungen offen, ohne
+ein Fluten der Abdichtungsebene bei Aufstau.</p>
+            <p>  <a href="https://www.kessel.de/produkte/ablauftechnik/badablaeufe-und-duschrinnen/duschrinne-linearis-infinity" class="link-text"> Mehr Information hier.</a>
+         </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="nachhaltigkeitsaspekte">
+        <button class="accordion accordion-eco">
+            <img src="static/src/material-symbols_eco.svg" class="icon-left" alt="Leaf Icon" />
+            <span class="accordion-text">Nachhaltigkeit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p> <ul>
+                <li>Das Grundmaterial der Duschrinne Linearis Infinity ist aus Kunststoff PP. Dadurch ist sie korrosionsfrei, langlebig und voll recyclebar. </li>
+                <li>Der Rinnensteg ist aus dem hochwertigsten Edelstahl V4A und garantiert damit ebenfalls Langlebigkeit und Resistenz gegen aggressive Medien. </li>
+            </ul>
+            </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="gesundheit">
+        <button class="accordion accordion-health">
+            <img src="static/src/solar_health-bold.svg" class="icon-left" alt="Safety Icon" />
+            <span class="accordion-text">Gesundheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Nicht spezifiziert.</p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="sicherheit">
+        <button class="accordion accordion-safety">
+            <img src="static/src/material-symbols_health-and-safety.svg" class="icon-left" alt=" Health Icon" />
+            <span class="accordion-text">Sicherheit</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p> Der nur 45mm schmale Rinnensteg mit umlaufender Umkantung verhindert Rutschgefahr im Nassbereich 
+            </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="digitalisierung">
+        <button class="accordion accordion-digit">
+            <img src="static/src/streamline_ai-technology-spark-solid.svg" class="icon-left" alt="Digitalisierung Icon" />
+            <span class="accordion-text">Digitalisierung</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>Nicht zutreffend.</p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="hygieneaspekt">
+        <button class="accordion accordion-hygiene">
+            <img src="static/src/ic_round-clean-hands.svg" class="icon-left" alt="Hygieneaspekt Icon" />
+            <span class="accordion-text">Hygieneaspekt</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p><ul>
+                <li>Die Duschrinne Linearis Infinity ist Bestandteil der Badentwässerung. Sie sorgt für eine sicheren und schnellen Abfluss des Abwassers aus der Dusche oder bei der Bodenreinigung.</li>
+                <li>Da das Abwasser über die Oberfläche des Steges und nicht über ein Rinnenbett abgeführt wird, wird die Entstehung von Schmutznestern vermieden und die Hygiene gefördert.</li>
+            </ul></p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact">
+        <h4>Kontakt</h4>
+        <a href="https://www.kessel.de/" class="link-text"> KESSEL SE + Co. KG</a>
+        <p>Holger Heckmann</a></p>
+        
+        <p>Telefon 0175 601 18 37| holger.heckmann@kessel.de</p>
+    </div> 
+    <div class="footer-banner">
+        <img src="static/src/BannerMandaMedGreen.png" alt="Footer Banner">
+    </div>
+
+</div>
+<script src="static/script.js"></script>
+</body>
+</html>
