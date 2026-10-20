@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Responsive Info Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@200;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- Logo section -->
+    <div class="logo">
+        <img src="static/src/mandamehr_Wort_Bildmarke_Slogan.jpg" alt="medmehr" class= "logo_medmehr">
+        <img src="static/src/ghL_Logo.jpg" alt="ghl" class= "logo_ghl">
+    </div>
+    
+    <!-- Product Section -->
+    <div class="product-info">
+        <img src="static/src/Boden 1.png" alt="Product Image" class="product-image">
+        <h3>Tarkett</h3>
+        <h2>Bodenbelag</h2>
+        <h4>Tarkett Aged-Care Kollektion</h4>
+        <p>Bodenbeläge in Bahnen und Plankenformat für demenzsensible Bereiche in Pflegeheimen und Krankenhäusern.
+        </p>
+        <p>Die Kollektion wurde speziell entwickelt, um Menschen mit Demenz durch eine sichere, orientierungsfördernde und stressreduzierende Umgebung zu unterstützen. 
+        </p>
+        
+    </div>
+
+    <!-- Expandable Button Sections -->
+    <div class="expandable-section" id="mehr-information">
+        <button class="accordion accordion-mehr">
+            <img src="static/src/ri_more-fill.svg" class="icon-left" alt="Mehr Icon" />
+            <span class="accordion-text">Mehr Informationen</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p>
+                <ul>
+                    <li> Durch den gezielten Einsatz von Farben, Kontrasten und harmonischen Designs können Orientierung und Wahrnehmung verbessert sowie Verunsicherung und Sturzrisiken reduziert werden.          
+                    </li>
+                    
+                    <li> Ideal geeignet für Pflege- und Gesundheitseinrichtungen </li>
+</p>
+            </ul>
+                <a href="https://boden.objekt.tarkett.de/de_DE/node/bodenbelag-seniorenpflege-raumgestaltung-im-seniorenheim-18736" class="link-text">Website</a>
+
+            </p>
+                    
+                
+               
+            </p>
+        </div>
+    </div>
+
+    <div class="expandable-section" id="Material und Montage">
+        <button class="accordion accordion-eco">
+            <img src="static/src/material-symbols_eco.svg" class="icon-left" alt="Leaf Icon" />
+            <span class="accordion-text">Oberfläche</span>
+            <img src="static/src/arrow.svg" class="icon-right arrow-icon" alt="Arrow Icon" />
+        </button>
+        <div class="panel">
+            <p> Die rutschhemmende R10 Oberfläche unterstützt ein sicheres Begehen der Flächen und kann das Risiko von Stürzen verringern. 
+            </p>
+            <p> Die geschlossene und pflegeleichte Oberfläche ermöglicht eine einfache Reinigung und Desinfektion. Schmutz und Feuchtigkeit können leicht entfernt werden, wodurch die Ansammlung von Keimen reduziert wird 
+            </p> 
+            <p> Durch die hohe Beständigkeit gegenüber Reinigungs- und Desinfektionsmitteln bleibt die Funktionalität des Bodenbelags langfristig erhalten. Fugenarme Flächen erleichtern die Unterhaltsreinigung und tragen zu einer hygienischen Umgebung bei
+            </p>
+            <p> Ein zusätzlicher Vorteil ist die Möglichkeit, Bahnenware und Plankenware in identischen Farben und NCS-Farbcodes zu kombinieren. Dadurch lassen sich unterschiedliche Funktionsbereiche hygienisch und gestalterisch nahtlos miteinander verbinden, ohne visuelle Brüche zu erzeugen. Dies unterstützt sowohl die Orientierung von Menschen mit Demenz als auch eine konsistente und hochwertige Raumgestaltung über verschiedene Nutzungsbereiche hinweg.
+            </p>
+        </div>
+    </div>
+
+    
+
+
+       
+    <!-- Contact Section -->
+    <div class="contact">
+        <h4>Kontakt</h4>
+        <p><a href="https://www.ogro.de/produkte/" class="link-text">OGRO </a></p>
+        <p> Moritz Fröhlich - Head of Sales Healthcare & Aged Care DACH 
+            </p>
+            <p> Moritz.Froehlich@tarkett.com
+            </p>
+             <p> M: +491721479145
+            </p>
+
+        
+    </div>
+    <div class="footer-banner">
+        <img src="static/src/BannerMandaMedGreen.png" alt="Footer Banner">
+    </div>
+</div>
+
+<script src="static/script.js"></script>
+</body>
+</html>
